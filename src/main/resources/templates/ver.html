@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<span th:text="${usuario.nombre}"></span>
+    <span th:if="${usuario.apellido == null}">No tiene apellido</span>
+	<span th:unless="${usuario.apellido == null}" th:text="${usuario.apellido}"></span>
+</body>
+</html>

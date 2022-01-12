@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+<script th:href="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:href="@{/webjars/jquery/jquery.min.js}"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/ver}" th:object="${usuario}" method="get">
+	<input type="text" th:field="*{nombre}" />
+	<span th:if="#{fields.hasErrors('nombre')}" th:errors="*{nombre}" ></span> <br>
+	<input type="text" th:field="*{apellido}" />
+	<span class="badge badge-warning" th:if="#{fields.hasErrors('apellido')}" th:errors="*{apellido}" ></span> <br>
+	<input type="number" th:field="*{edad}" />
+	<span th:if="#{fields.hasErrors('edad')}" th:errors="*{edad}" ></span> <br>
+	<input type="text" th:field="*{run}" />
+	<span th:if="#{fields.hasErrors('run')}" th:errors="*{run}" ></span> <br>
+	<input type="submit" value="Submit">
+</form>
+</body>
+</html>
